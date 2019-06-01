@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Edit User Page</title>
+</head>
+
+<body>
+    <div class="container">
+        Edit User {{ user_list[0]['id'] }}
+
+        <form action="/update_user/{{ user_list[0]['id'] }}" method="POST" class="mt-3">
+            <div class="form-group">
+                <label>Full Name: </label>
+                <input type="text" class="form-control" name="full_name" value="{{ user_list[0]['full_name'] }}">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Email: </label>
+                <input type="text" class="form-control" name="email" value="{{ user_list[0]['email'] }}">
+            </div>
+            <input type="submit" class="btn btn-primary text-center" value="Update">
+        </form>
+        <h1><a href="/">Show User</a></h1>
+        <h1><a href="/show_users">Show Users Table</a></h1>
+    </div>
+</body>
+
+</html>

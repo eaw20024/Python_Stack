@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Flask + MySQL + Users</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="d-inline mt-5">Add a New User</h1>
+
+        <form action="/create_users" method="POST" class="mt-3">
+            <div class="form-group">
+                <label>Full Name: </label>
+                <input type="text" class="form-control" name="full_name" placeholder="Enter First Name">
+            </div>
+            <div class="form-group">
+                <label>Email: </label>
+                <input type="text" class="form-control" name="email" placeholder="Please enter your Email">
+            </div>
+            <input type="submit" class="btn btn-primary text-center" vlaue="Create">
+        </form>
+
+        <h2 class="d-inline-block mr-3 mt-3"><a href="/users/new">Home</a></h2>
+        <h2 class="d-inline-block"><a href="/show_users">Show Users</a></h2>
+    </div>
+</body>
+
+</html>
